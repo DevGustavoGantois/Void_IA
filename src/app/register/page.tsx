@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FormRegister from "./form-register";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Page() {
     return (
@@ -10,9 +10,9 @@ export default function Page() {
                 <CardTitle className="text-white text-[32px] lg:text-[40px]">Void IA</CardTitle>
                 <Image src="/LogoIcon.svg" width={41} height={36} alt="" />
             </CardHeader>
-            <div>
+            <CardContent>
             <FormRegister />
-            </div>
+            </CardContent>
             </Card>
         </section>
     )
