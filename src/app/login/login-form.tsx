@@ -90,11 +90,11 @@
                                 <FormMessage />
                             </FormItem>
                         )} />
-                        <Link href="/register" className="flex items-center gap-2 text-sm">
+                        <Link href="/register" className="flex items-center justify-end mb-4 gap-2 text-sm">
                         Não tem uma conta? <strong>Cadastre-se</strong>
                         </Link>
                         <div className="flex items-center justify-center">
-                        <Button variant="default" type="submit" className="w-full">
+                        <Button variant="default" type="submit" className="w-full text-white">
                             Entrar
                         </Button>
                         </div>

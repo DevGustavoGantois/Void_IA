@@ -4,7 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Page() {
     return (
-        <section className="mt-28 lg:mt-60 p-4">   
+        <section className="mt-28 lg:mt-48 p-4">   
+            <div className="flex items-center justify-center">
             <Card className="w-full lg:w-1/2">
             <CardHeader className="flex items-center justify-center gap-6"> 
                 <CardTitle className="text-white text-[32px] lg:text-[40px]">Void IA</CardTitle>
@@ -14,6 +15,7 @@ export default function Page() {
             <FormRegister />
             </CardContent>
             </Card>
+            </div>
         </section>
     )
 }
