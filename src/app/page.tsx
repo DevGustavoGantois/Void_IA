@@ -18,12 +18,12 @@ export default function Home() {
           <p className="text-white/50 w-[350px] leading-7 lg:max-w-[443px] text-center">Olá! Bem vindo a nova inteligência artificial do momento, deseja Cadastrar-se ou fazer o Login?</p>
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <Button asChild className="w-[200px]">
-              <Link href="/register" className="text-white font-medium text-[18px]">
+              <Link href="/register" className="text-white font-semibold text-[18px]">
                 Cadastre-se
               </Link>
             </Button>
             <Button asChild className="w-[200px]"> 
-              <Link href="/login" className="text-white font-medium text-[18px]">
+              <Link href="/login" className="text-white font-semibold text-[18px]">
               Login
               </Link>
             </Button>
