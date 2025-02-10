@@ -11,7 +11,7 @@ export default function Page() {
                 <h1 className="text-center text-white font-medium text-2xl lg:text-4xl mb-60">Void IA</h1>
                 <div className="flex items-center gap-4">
                  <Image src="/LogoIcon.svg" width={41} height={36} alt="" />
-                 <p className="text-white text-xl">Olá Seja bem vindo ao Void IA</p>
+                 <p className="text-white text-center text-xl">Olá Seja bem vindo ao Void IA</p>
                 </div>
                 <div className="relative w-full max-w-4xl">
             <Input
