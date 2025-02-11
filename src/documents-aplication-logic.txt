@@ -14,4 +14,19 @@
 #Componente RegisterForm:
 
 1.O componente de login constituisse de uma lógica parecida a do componente LoginForm.
-2.
+2.Importando componentes do shadcnUI, utilizando o use client, pois tudo será renderizado no lado do servidor.
+3.Importando o toast através do shadcnUI com o Sonner.
+4.Criando uma constante formSchema e após isso passei os names dos inputs como objetos, validando eles com o mínimo e o máximo de caracteres.
+5.Criando uma constante gênero, que receberá um array com objetos com id e values, ids como números e valores = string.
+6.Criando uma constante atividade, que receberá um array com objetos com id e value, ids como números e valores como strings.
+7.Utilizando o useRouter do next/navigation para redirecionar o usuário após cadastrar-se para a página de login.
+8.Tipo FormDataSchema que infere o tipo do formSchema que será usado nos formulários.
+9.constante form recebe o useForm<FormDataSchema>, criando um resolver: que recebe um zodResolver do hook-form-resolvers e os defaultValues tem que receber um valor vazio, por conta dos inputs.
+10.constante handleAction será recebido na tag form (formulário), receberá um data que terá um FormDataSchema que recebe um formSchema. criando uma validação se a senha for igual a confirmar a senha, utilizando um setTimeout que receberá o router.push('/login') redirecionando para a página de login após 2 segundos.
+11.No TSX utilizei o Form do shadcnUI passando as propriedades do form como mostrado na documentação, utilizando o handleSubmit nativo do formulário.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Componente Page da pasta platform.
+
+1.
