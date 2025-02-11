@@ -29,4 +29,24 @@
 
 #Componente Page da pasta platform.
 
-1.
+1.use client, pois tudo será renderizado no lado do cliente.
+2.Utilizando o useState para gerenciamento de estado passando um array com id e textos já predefinidos.
+3.Criando um useState para controlar o estado dos inputs, o valor começa com uma string vazia, pois o input precisa começar vazio
+4.Constante addQuestion recebe um  questionText que é uma String, dentro do addQuestion terá um newQuestion que receberá um id especificado como uma String recebendo um Date.now, text recebendo um questionText, setQuestions que está no useState recebe um prev, recebendo um array com um spred operator e uma newQuestion.
+5.Constante removeQuestion recebe um id que será uma string, dentro da constante terá setQuestions do useState que receberá um prev e esse prev será prev.filter para filtrar a question caso fosse question.id for diferente de id ele irá apagar.
+6.TSX retornando um componente Sidebar com propriedades questions e removeQuestion.
+7.Input do shadcnUI recebendo valor do useState -> inputValue. onKeyDown utilizado para o evento disparar a partir de que o e.key === Enter do teclado ele adiciona a constante addQuestion que recebe um evento e.currentTarget.value adicionando o valor, e após isso o e.currentTarget.value = ""; para limpar o input.
+8.O ícone CircleArrowUp recebe um onClick que recebe uma arrow function com a constante addQuestion recebendo dentro o inputValue.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Componente Sidebar e Navbar-Mobile
+
+1.O componente Sidebar recebe uma interface Props para definir que o questions será do tipo id que será do tipo string e o text será um array de string, removeQuestion que receberá uma id que é uma string e retornará uma função vazia, um void;
+2.Sidebar recebendo as propriedades {questions, removeQuestion}: Props (recebendo a Props da interface).
+3.const router = useRouter() do next/navigation usada na constante goToQuestion que recebe um id que é uma string, dentro da constante terá um router.push levando o usuário ao clicar na pergunta ir para a página espeficada com o id.
+4.TSX retorna um questions que é especificado na Props, o question terá um map para percorrer as questões através do id que será uma string, e o text será uma string também, após isso a key que é obrigatoria ser recebida no map terá um question.id, também terá um onClick recebendo um goToQuestion com um question.id, para a partir do momento que o usuário clicar na div ele será levado para a página da pergunta.
+5.o parágrafo recebe um question.text.
+6. O ícone trash recebe um onClick com um e (evento) para remover a questão através do id removeQuestion(question.id). E o e.stopPropagation() é para após a questão ser removida, o usuário não poderá clicar nem navegar por ela.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
