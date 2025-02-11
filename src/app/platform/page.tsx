@@ -1,12 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Sidebar } from "./components/sidebar";
 import Image from "next/image";
 import { CircleArrowUp } from "lucide-react";
+import { getOpenIaAPI } from "@/api/actions-openIA";
 
 export default function Page() {
-    //Perguntas defaults utilizadas com useState para definir o estado. Dentro do useState recebe objetos
+   
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getOpenIaAPI("Explique o que é Void IA");
+                console.log(response)
+            } catch (error) {
+                console.log("Erro ao buscar a resposta da API:", error)
+            }
+        };
+
+        fetchData();
+    }, [])
+
     const [questions, setQuestions] = useState([
         { id: "1", text: "O que é Void IA?" },
         { id: "2", text: "Como funciona o aprendizado de máquina?" },
@@ -15,9 +29,11 @@ export default function Page() {
     
     const [inputValue, setInputValue] = useState<string>("");
 
-    const addQuestion = (questionText: string) => {
+    const addQuestion = async (questionText: string) => {
         const newQuestion = { id: String(Date.now()), text: questionText };
+        await getOpenIaAPI(questionText);
         setQuestions((prev) => [...prev, newQuestion]);
+        setInputValue(""); //Limpar o input.
     };
 
     const removeQuestion = (id: string) => {
