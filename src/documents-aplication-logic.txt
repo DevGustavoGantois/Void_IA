@@ -1,0 +1,17 @@
+#Componente LoginForm:
+
+1.Importando o toast através do shadcnUI com o Sonner.
+2.Criando uma constante formSchema e após isso criando o um objeto com o zod. Dentro do objeto definiremos o nome dos names passados para o formulário e validações.
+3.Criando um tipo formDataSchema que será igual a uma inferência de tipo do formulário (formSchema).
+4.Constante form que recebe um useForm do react-hook-form, recebendo um formDataSchema que recebe um formSchema, o defaultValues precisa ser definido obrigatoriamente para não dar erro em execução.
+5.Constante router recebe um useRouter() da biblioteca next/navigation, para criação de rotas.
+6.Constante handleAction utilizada dentro do da tag form do formulário. handleAction recebe um data que recebe as variáveis definidas no formDataSchema, criando uma condicional para validar o resultado pegando a senha definida no formSchema SE for a senha especificada terá acesso através de um router.push("/rota-especificada") ativando um toaster para confirmar a validação, se não, não terá, acontecerá um refresh na página e um toast afirmando o erro, a validação terá um setTimeout para ter um delay de 2 segundos."
+7.No TSX terá um Form do shadcnUI, contendo toda sua estrutura (mostrada na sua documentação) recebendo os valores definidos na variável (const form).
+8. Botão será do tipo submit para envio do formulário.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Componente RegisterForm:
+
+1.O componente de login constituisse de uma lógica parecida a do componente LoginForm.
+2.
