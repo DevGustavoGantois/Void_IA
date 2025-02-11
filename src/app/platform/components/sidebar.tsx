@@ -52,7 +52,7 @@ export function Sidebar({ questions, removeQuestion }: Props) {
                 </div>
             </div>
             <div className="flex lg:hidden">
-                <MenuMobile />
+                <MenuMobile questions={questions} removeQuestion={removeQuestion} />
             </div>
         </aside>
     );

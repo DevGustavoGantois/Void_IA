@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CircleArrowUp } from "lucide-react";
 
 export default function Page() {
+    //Perguntas defaults utilizadas com useState para definir o estado. Dentro do useState recebe objetos
     const [questions, setQuestions] = useState([
         { id: "1", text: "O que é Void IA?" },
         { id: "2", text: "Como funciona o aprendizado de máquina?" },
