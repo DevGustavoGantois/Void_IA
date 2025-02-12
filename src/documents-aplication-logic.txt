@@ -32,11 +32,12 @@
 1.use client, pois tudo será renderizado no lado do cliente.
 2.Utilizando o useState para gerenciamento de estado passando um array com id e textos já predefinidos.
 3.Criando um useState para controlar o estado dos inputs, o valor começa com uma string vazia, pois o input precisa começar vazio
-4.Constante addQuestion recebe um  questionText que é uma String, dentro do addQuestion terá um newQuestion que receberá um id especificado como uma String recebendo um Date.now, text recebendo um questionText, setQuestions que está no useState recebe um prev, recebendo um array com um spred operator e uma newQuestion.
-5.Constante removeQuestion recebe um id que será uma string, dentro da constante terá setQuestions do useState que receberá um prev e esse prev será prev.filter para filtrar a question caso fosse question.id for diferente de id ele irá apagar.
-6.TSX retornando um componente Sidebar com propriedades questions e removeQuestion.
-7.Input do shadcnUI recebendo valor do useState -> inputValue. onKeyDown utilizado para o evento disparar a partir de que o e.key === Enter do teclado ele adiciona a constante addQuestion que recebe um evento e.currentTarget.value adicionando o valor, e após isso o e.currentTarget.value = ""; para limpar o input.
-8.O ícone CircleArrowUp recebe um onClick que recebe uma arrow function com a constante addQuestion recebendo dentro o inputValue.
+4.useEffect recebe a API chamada no arquivo actions.ts, a constante fetchData é assincrona utilizado um try catch, no try tem a chamada da API através da const response e se cair no catch retorna um erro, dando response.statusText.
+5.Constante addQuestion recebe um  questionText que é uma String, dentro do addQuestion terá um newQuestion que receberá um id especificado como uma String recebendo um Date.now, text recebendo um questionText, setQuestions que está no useState recebe um prev, recebendo um array com um spred operator e uma newQuestion.
+6.Constante removeQuestion recebe um id que será uma string, dentro da constante terá setQuestions do useState que receberá um prev e esse prev será prev.filter para filtrar a question caso fosse question.id for diferente de id ele irá apagar.
+7.TSX retornando um componente Sidebar com propriedades questions e removeQuestion.
+8.Input do shadcnUI recebendo valor do useState -> inputValue. onKeyDown utilizado para o evento disparar a partir de que o e.key === Enter do teclado ele adiciona a constante addQuestion que recebe um evento e.currentTarget.value adicionando o valor, e após isso o e.currentTarget.value = ""; para limpar o input.
+9.O ícone CircleArrowUp recebe um onClick que recebe uma arrow function com a constante addQuestion recebendo dentro o inputValue.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -50,3 +51,16 @@
 6. O ícone trash recebe um onClick com um e (evento) para remover a questão através do id removeQuestion(question.id). E o e.stopPropagation() é para após a questão ser removida, o usuário não poderá clicar nem navegar por ela.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Arquivo actions-openIA.ts
+
+1.Exporta uma função assincrona recebendo um prompt que será uma string.
+2.const response = recebe a API através de um fetch e um prefixo await, obrigatório, recebendo um objeto com um body recebendo um JSON.stringify, recebendo as informações do modelo, prompt, o máximo de tokens e a criatividade (temperature).
+3.Criando uma estrutura condicional, se a constante response que recebe a API for diferente de ok ele vai dar um throw new Error mostrando o erro na API através da ${response.statusText}.
+4.constante data é um await que vai receber a constante response que recebe a API retornando um JSON, mostrado após no console.log(data).
+5.Retorna data.choices[0].text.trim();
+6. Se cair no erro vai mostrar um erro e retornar uma resposta "Erro ao obter resposta da IA."
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#.env.local recebe a a chave(key) da API. 
